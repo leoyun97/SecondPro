@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:secondpro/widgets/buttons.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,21 +20,19 @@ class MyApp extends StatelessWidget {
         // ),
         backgroundColor: Color(0xff181818),
         body: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 40,
+          padding: const EdgeInsets.symmetric(
+            horizontal: 20,
           ),
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 80,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                    Text(
+                  Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
+                    const Text(
                       'Hey, Leoyun',
                       style: TextStyle(
                         fontFamily: '굴림',
@@ -58,17 +57,18 @@ class MyApp extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 100,
                       ),
                       Text(
                         'Total Balance',
-                        style: TextStyle(color: Colors.white.withOpacity(0.6), fontSize: 25),
+                        style: TextStyle(
+                            color: Colors.white.withOpacity(0.6), fontSize: 25),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
-                      Text(
+                      const Text(
                         '\$5 194 382',
                         style: TextStyle(
                           color: Colors.white,
@@ -81,29 +81,19 @@ class MyApp extends StatelessWidget {
                 ],
               ),
               Row(
-                children: [
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
                   SizedBox(
-                   height: 100,
+                    height: 100,
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.amber,
-                      borderRadius: BorderRadius.circular(45),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 20,
-                        horizontal: 50,
-                      ),
-                      child: Text(
-                        'Tranfer',
-                        style: TextStyle(
-                            fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
+                  roundbutton(
+                      text: 'Transfer',
+                      bgColor: Colors.amber,
+                      txtColor: Colors.black),
+                  roundbutton(
+                      text: 'Request',
+                      bgColor: Color(0xff1f2123),
+                      txtColor: Colors.white),
                 ],
               ),
             ],
