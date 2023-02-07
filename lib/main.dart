@@ -3,9 +3,13 @@ import 'package:secondpro/subpage.dart';
 import 'package:secondpro/widgets/buttons.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const MaterialApp(
+      home: MyApp(),
+      title: '나의 첫번째 어플',
+    ),
+  );
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -20,7 +24,7 @@ class MyApp extends StatelessWidget {
         // body: Center(
         //   child: Text('Hello Flutter'),
         // ),
-        backgroundColor: Color(0xff181818),
+        backgroundColor: const Color(0xff181818),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(
@@ -86,9 +90,9 @@ class MyApp extends StatelessWidget {
                     ),
                   ],
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
+                  children: [
                     SizedBox(
                       height: 100,
                     ),
@@ -109,17 +113,21 @@ class MyApp extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Wallets',
+                    const Text('Wallets',
                         style: TextStyle(
                           fontSize: 35,
                           color: Colors.white,
                         )),
                     TextButton(
                       onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => const secondP()));
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SecondP(),
+                          ),
+                        );
                       },
-                      child: Text(
+                      child: const Text(
                         'View All',
                         style: TextStyle(fontSize: 25, color: Colors.grey),
                       ),
