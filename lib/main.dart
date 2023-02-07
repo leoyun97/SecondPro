@@ -6,9 +6,6 @@ void main() {
   runApp(const MyApp());
 }
 
-void _onClicked() {
-  
-}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -118,9 +115,9 @@ class MyApp extends StatelessWidget {
                           color: Colors.white,
                         )),
                     TextButton(
-                      onPressed: (){
+                      onPressed: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => secondP()));
+                            MaterialPageRoute(builder: (context) => const secondP()));
                       },
                       child: Text(
                         'View All',
