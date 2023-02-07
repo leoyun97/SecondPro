@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:secondpro/subpage.dart';
 import 'package:secondpro/widgets/buttons.dart';
 
 void main() {
@@ -6,7 +7,7 @@ void main() {
 }
 
 void _onClicked() {
-  print('Clicked!');
+  
 }
 
 class MyApp extends StatelessWidget {
@@ -36,24 +37,26 @@ class MyApp extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
-                      const Text(
-                        'Hey, Leoyun',
-                        style: TextStyle(
-                          fontFamily: '굴림',
-                          color: Colors.white,
-                          fontSize: 28,
-                          fontWeight: FontWeight.w800,
-                        ),
-                      ),
-                      Text(
-                        'Welcome back',
-                        style: TextStyle(
-                          color: Colors.grey.shade500,
-                          fontSize: 18,
-                        ),
-                      ),
-                    ]),
+                    Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          const Text(
+                            'Hey, Leoyun',
+                            style: TextStyle(
+                              fontFamily: '굴림',
+                              color: Colors.white,
+                              fontSize: 28,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
+                          Text(
+                            'Welcome back',
+                            style: TextStyle(
+                              color: Colors.grey.shade500,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ]),
                   ],
                 ),
                 Row(
@@ -68,7 +71,8 @@ class MyApp extends StatelessWidget {
                         Text(
                           'Total Balance',
                           style: TextStyle(
-                              color: Colors.white.withOpacity(0.6), fontSize: 25),
+                              color: Colors.white.withOpacity(0.6),
+                              fontSize: 25),
                         ),
                         const SizedBox(
                           height: 5,
@@ -107,14 +111,17 @@ class MyApp extends StatelessWidget {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
+                  children: [
                     Text('Wallets',
                         style: TextStyle(
                           fontSize: 35,
                           color: Colors.white,
                         )),
                     TextButton(
-                      onPressed: _onClicked,
+                      onPressed: (){
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => secondP()));
+                      },
                       child: Text(
                         'View All',
                         style: TextStyle(fontSize: 25, color: Colors.grey),
